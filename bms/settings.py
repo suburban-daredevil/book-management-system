@@ -27,7 +27,7 @@ SECRET_KEY = 'nxq_w!x_eg_el6=l%t8ye&@45xax-7kjto^@z@_&jby8i+83*!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://sriram-bms.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['bmslive-cli.herokuapp.com','127.0.0.1']
 
 
 # Application definition
