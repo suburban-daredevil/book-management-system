@@ -1,0 +1,67 @@
+{% extends 'BooksApp/index.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Customer:</h5>
+            <hr>
+            <a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'update_customer' customer.id %}">Update Customer</a>
+            <a class="btn btn-outline-info btn-sm btn-block" href="{% url 'add_book' customer.id %}">Add Book</a>
+            <a class="btn btn-outline-danger btn-sm btn-block" href="{% url 'delete_customer' customer.id %}">Delete Customer</a>
+            <a class="btn btn-outline-info btn-sm btn-block" href="{% url 'make_admin' customer.id %}">Make Admin</a>
+
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Contact Information</h5>
+            <hr>
+            <p>Name: {{customer.name}}</p>
+            <p>Email: {{customer.email}}</p>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Total Books</h5>
+            <hr>
+            <h1 style="text-align: center;padding: 10px">{{booksCount}}</h1>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Book</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Date Added</th>
+                    <th>Update</th>
+                    <th>Remove</th>
+                </tr>
+                {% for book in books %}
+                    <tr>
+                        <td>{{book.Bookname}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.price}}</td>
+                        <td>{{book.date_created}}</td>
+                        <td><a class="btn btn-sm btn-primary" href="{% url 'update_book' book.id %}">Update</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'delete_book' book.id %}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>    
+
+{% endblock %}

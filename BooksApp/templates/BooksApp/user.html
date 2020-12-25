@@ -1,0 +1,38 @@
+{% extends 'BooksApp/index.html' %}
+
+{% block content %}
+
+{% include 'BooksApp/status.html' %}
+
+<br>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <a class="btn btn-primary  btn-sm btn-block" href="{% url 'add_book_user' user.customer.id %}">Add new book</a>
+            <table class="table table-sm">
+                <tr>
+                    <th>Book</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Date Added</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                {% for book in books %}
+                    <tr>
+                        <td>{{book.Bookname}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.price}}</td>
+                        <td>{{book.date_created}}</td>
+                        <td><a class="btn btn-primary btn-sm" href="{% url 'update_book_user' book.id %}">Update</a></td>
+                        <td><a class="btn btn-danger btn-sm" href="{% url 'delete_book_user' book.id %}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>    
+
+
+{% endblock %}

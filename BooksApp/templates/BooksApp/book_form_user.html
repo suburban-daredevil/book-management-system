@@ -1,0 +1,22 @@
+{% extends 'BooksApp/index.html' %}
+{% load static %}
+{% block content %}
+
+<h3>User : {{customer.name}}</h3><br>
+<div class="row">
+    <div class="col-md-8">
+        <div class="card card-body">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ formset.management_form }}
+                {% for form in formset %}
+                    {{form}}
+                    <hr>
+                {% endfor %}
+                <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

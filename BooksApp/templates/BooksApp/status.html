@@ -1,0 +1,30 @@
+<br>
+{% if request.user.is_staff %}
+<div class="row">
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white  mb-3" id="total-customers">
+                <div class="card-header">
+                    <h5 class="card-title">Total Customers</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{totalCustomers}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white  mb-3" id="total-books">
+                <div class="card-header">
+                    <h5 class="card-title">Total Books</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{totalBooks}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

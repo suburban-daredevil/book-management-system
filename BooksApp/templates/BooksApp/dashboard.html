@@ -1,0 +1,58 @@
+{% extends 'BooksApp/index.html' %}
+
+{% block content %}
+
+{% include 'BooksApp/status.html' %}
+
+<br>
+    <div class="row">
+        <div class="col-md-5">
+            <h5>&nbsp;&nbsp;&nbsp;CUSTOMERS</h5>
+            <hr>
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>View</th>
+                        <th>Customer</th>
+                        <th>Email</th>
+                    </tr>
+                    {% for customer in customers  %}
+                        <tr>
+                            <td><a class="btn btn-sm btn-primary" href="{% url 'customer' customer.id %}">View</a></td>
+                            <td>{{customer.name}}</td>
+                            <td>{{customer.email}}</td>
+                        </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <h5>BOOKS ADDED</h5>
+            <hr>
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>Book</th>
+                        <th>Date Added</th>
+                        <th>Customer</th>
+                        <th>Update</th>
+                        <th>Remove</th>
+                    </tr>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{book.Bookname}}</td>
+                            <td>{{book.date_created}}</td>
+                            <td>{{book.customer.name}}</td>
+                            <td><a class="btn btn-sm btn-primary" href="{% url 'update_book' book.id %}">Update</a></td>
+                            <td><a class="btn btn-sm btn-danger" href="{% url 'delete_book' book.id %}">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

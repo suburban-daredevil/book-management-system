@@ -1,0 +1,20 @@
+{% extends 'BooksApp/index.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+        <div class="card card-body">
+            <form method="POST" action="">
+                {% csrf_token %}
+                    {{form}}
+                <input class="btn btn-primary" type="submit" name="Submit" value="Submit">
+            </form>
+            <br>
+            <p style="font-size:small;">Warning : Make sure that the Customer Name and the User is the same to avoid data redundancy and to maintain data consistency.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

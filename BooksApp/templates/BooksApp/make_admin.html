@@ -1,0 +1,20 @@
+{% extends 'BooksApp/index.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <p>Do you want to make "{{user}}" an Admin?</p>
+
+            <form method="POST" action="">
+                {% csrf_token %}
+                <a class="btn btn-warning" href="{% url 'home' %}">Cancel</a>
+                <input class="btn btn-danger" type="submit" name="submit" value="Confirm">
+            </form>
+        </div>
+    </div>  
+</div>
+
+{% endblock %}
