@@ -208,6 +208,7 @@ def makeAdmin(request,pk):
         user.groups.add(group)
         user.groups.remove(group1)
         user.is_staff = True
+        user.is_superuser = True
         user.save()
         customer.delete()
         return redirect('/')
