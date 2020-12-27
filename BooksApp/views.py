@@ -9,7 +9,6 @@ from django.contrib.auth.models import Group
 from .decorators import unauthenticated_user,allowed_users, admin_only
 from .models import *
 from .forms import *
-from .filter import CustomerFilter
 
 
 
