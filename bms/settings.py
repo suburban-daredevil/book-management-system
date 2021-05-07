@@ -130,14 +130,13 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-
 STATIC_URL = '/static/'
-
-MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
+
+MEDIA_URL = '/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 
@@ -148,4 +147,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'dummy.mail.pwdreset@gmail.com'
-EMAIL_HOST_PASSWORD = 'pwdreset'
+EMAIL_HOST_PASSWORD = ''
